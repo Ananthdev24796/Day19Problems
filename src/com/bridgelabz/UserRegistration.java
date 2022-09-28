@@ -13,19 +13,19 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC2
-	 * As a User need to enter a valid Last Name
-     * Last name starts with Cap and has minimum 3 characters
+	 * UC3
+	 * As a User need to enter a valid email
+	 * E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl	& co) and 2 optional (xyz & in) with precise @ and . positions
 	 */
 	
 	
-		public static boolean checkFirstName(String lName) {
-			String  userRegistrationRegEx = "[A-Z]{1}[a-z]{2,6}";
+		public static boolean checkEMail(String mail) {
+			String  userRegistrationRegEx = "[abc]*[.][a-z A-z]{3}[@][bl]*[.][co]*[.][a-z]{2}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
-			if(lName == null) {
+			if(mail == null) {
 				return false;
 			}
-			Matcher matcherObj = patternObj.matcher(lName);
+			Matcher matcherObj = patternObj.matcher(mail);
 			
 			return matcherObj.matches();
 			
@@ -33,14 +33,13 @@ public class UserRegistration {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("---------UserRegistration-------------");
-		
-		String lName ="Nair";
-		boolean islName = checkFirstName(lName);
-		if(islName)
-			System.out.println(lName+"is an vaild LastName");
+		System.out.println("---------UserRegistration Email Verification-------------");
+		String mail ="abc.xyz@bl.co.in";
+		boolean isEMail = checkEMail(mail);
+		if(isEMail)
+			System.out.println(mail+"\s is an vaild Email");
 		else
-			System.out.println(lName+"is an Invaild LastName");
+			System.out.println(mail+"\s is an Invaild LastName");
 		
 
 	}

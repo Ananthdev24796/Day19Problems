@@ -13,19 +13,18 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC7
-	 *Rule3– Should have at least 1 numeric number in the password - 
-	 *NOTE – All rules must be passed
+	 * UC8
+	 *RShould clear all email samples provided separately
     **/
 	
 	
-		public static boolean checkPassword(String password) {
+		public static boolean checkEMail(String mail) {
 			String  userRegistrationRegEx = "(?=.*[@#$&])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
-			if(password == null) {
+			if(mail == null) {
 				return false;
 			}
-			Matcher matcherObj = patternObj.matcher(password);
+			Matcher matcherObj = patternObj.matcher(mail);
 			
 			return matcherObj.matches();
 			
@@ -34,12 +33,12 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		System.out.println("---------User Registration Password Verification-------------");
-		String password ="PassworD@7";
-		boolean isPassword = checkPassword(password);
-		if(isPassword)
-			System.out.println(password+"\s is an vaild Password");
+		String mail ="";
+		boolean isMail = checkEMail(mail);
+		if(isMail)
+			System.out.println(mail+"\s is an vaild Email");
 		else
-			System.out.println(password+"\s is an Invaild Password");
+			System.out.println(mail+"\s is an Invaild Email");
 		
 
 	}

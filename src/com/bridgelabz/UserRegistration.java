@@ -20,7 +20,7 @@ public class UserRegistration {
 	
 	
 		public static boolean checkPassword(String password) {
-			String  userRegistrationRegEx = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}";
+			String  userRegistrationRegEx = "(?=.*[@#$&])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(password == null) {
 				return false;
@@ -34,7 +34,7 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		System.out.println("---------User Registration Password Verification-------------");
-		String password ="PassworD7";
+		String password ="PassworD@7";
 		boolean isPassword = checkPassword(password);
 		if(isPassword)
 			System.out.println(password+"\s is an vaild Password");

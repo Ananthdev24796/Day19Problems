@@ -13,15 +13,14 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC6
-	 *Rule2 – Should have at least 1
-	 *Upper Case - NOTE – All rules must be passed
-	 * NOTE – All rules must be passed
+	 * UC7
+	 *Rule3– Should have at least 1 numeric number in the password - 
+	 *NOTE – All rules must be passed
     **/
 	
 	
 		public static boolean checkPassword(String password) {
-			String  userRegistrationRegEx = "(?=.*[a-z])(?=.*[A-Z]).{8,16}";
+			String  userRegistrationRegEx = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(password == null) {
 				return false;
@@ -35,7 +34,7 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		System.out.println("---------User Registration Password Verification-------------");
-		String password ="PassworD";
+		String password ="PassworD7";
 		boolean isPassword = checkPassword(password);
 		if(isPassword)
 			System.out.println(password+"\s is an vaild Password");

@@ -13,19 +13,20 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC4
-	 * As a User need to follow pre-defined
-	 * Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
+	 * UC5
+	 *As a User need to follow pre-defined Password rules.
+	 *Rule1 minimum 8 Characters 
+	 * NOTE – All rules must be passed
     **/
 	
 	
-		public static boolean checkPhoneNumber(String number) {
-			String  userRegistrationRegEx = "[91]*[\s]*[0-9]{10}";
+		public static boolean checkPassword(String password) {
+			String  userRegistrationRegEx = "[a-z A-Z]{8}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
-			if(number == null) {
+			if(password == null) {
 				return false;
 			}
-			Matcher matcherObj = patternObj.matcher(number);
+			Matcher matcherObj = patternObj.matcher(password);
 			
 			return matcherObj.matches();
 			
@@ -33,13 +34,13 @@ public class UserRegistration {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("---------UserRegistration PhoneNumber Verification-------------");
-		String number ="91   9043824796";
-		boolean isNumber = checkPhoneNumber(number);
-		if(isNumber)
-			System.out.println(number+"\s is an vaild PhoneNumber");
+		System.out.println("---------User Registration Password Verification-------------");
+		String password ="password";
+		boolean isPassword = checkPassword(password);
+		if(isPassword)
+			System.out.println(password+"\s is an vaild Password");
 		else
-			System.out.println(number+"\s is an Invaild PhoneNumber");
+			System.out.println(password+"\s is an Invaild Password");
 		
 
 	}

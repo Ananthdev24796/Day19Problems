@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC5
+	 * UC6
 	 *As a User need to follow pre-defined Password rules.
 	 *Rule1 minimum 8 Characters 
 	 * NOTE – All rules must be passed
@@ -21,7 +21,7 @@ public class UserRegistration {
 	
 	
 		public static boolean checkPassword(String password) {
-			String  userRegistrationRegEx = "[a-z A-Z]{8}";
+			String  userRegistrationRegEx = "[a-z A-Z]{8,16}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(password == null) {
 				return false;
@@ -35,7 +35,7 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		System.out.println("---------User Registration Password Verification-------------");
-		String password ="password";
+		String password ="passwordqwerty";
 		boolean isPassword = checkPassword(password);
 		if(isPassword)
 			System.out.println(password+"\s is an vaild Password");

@@ -13,19 +13,19 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC1
-	 * As a User need to enter a valid First Name
-     * First name starts with Cap and has minimum 3 characters
+	 * UC2
+	 * As a User need to enter a valid Last Name
+     * Last name starts with Cap and has minimum 3 characters
 	 */
 	
 	
-		public static boolean checkFirstName(String fName) {
+		public static boolean checkFirstName(String lName) {
 			String  userRegistrationRegEx = "[A-Z]{1}[a-z]{2,6}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
-			if(fName == null) {
+			if(lName == null) {
 				return false;
 			}
-			Matcher matcherObj = patternObj.matcher(fName);
+			Matcher matcherObj = patternObj.matcher(lName);
 			
 			return matcherObj.matches();
 			
@@ -35,12 +35,12 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		System.out.println("---------UserRegistration-------------");
 		
-		String fName ="Ananth";
-		boolean isfName = checkFirstName(fName);
-		if(isfName)
-			System.out.println(fName+"is an vaild FirstName");
+		String lName ="Nair";
+		boolean islName = checkFirstName(lName);
+		if(islName)
+			System.out.println(lName+"is an vaild LastName");
 		else
-			System.out.println(fName+"is an Invaild FirstName");
+			System.out.println(lName+"is an Invaild LastName");
 		
 
 	}

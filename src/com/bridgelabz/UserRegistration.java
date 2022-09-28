@@ -13,9 +13,9 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC5
-	 *As a User need to follow pre-defined Password rules.
-	 *Rule1 minimum 8 Characters 
+	 * UC6
+	 *Rule2 – Should have at least 1
+	 *Upper Case - NOTE – All rules must be passed
 	 * NOTE – All rules must be passed
     **/
 	

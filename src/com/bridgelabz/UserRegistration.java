@@ -13,19 +13,19 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC3
-	 * As a User need to enter a valid email
-	 * E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl	& co) and 2 optional (xyz & in) with precise @ and . positions
-	 */
+	 * UC4
+	 * As a User need to follow pre-defined
+	 * Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
+    **/
 	
 	
-		public static boolean checkEMail(String mail) {
-			String  userRegistrationRegEx = "[abc]*[.][a-z A-z]{3}[@][bl]*[.][co]*[.][a-z]{2}";
+		public static boolean checkPhoneNumber(String number) {
+			String  userRegistrationRegEx = "[91]*[\s]*[0-9]{10}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
-			if(mail == null) {
+			if(number == null) {
 				return false;
 			}
-			Matcher matcherObj = patternObj.matcher(mail);
+			Matcher matcherObj = patternObj.matcher(number);
 			
 			return matcherObj.matches();
 			
@@ -33,13 +33,13 @@ public class UserRegistration {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("---------UserRegistration Email Verification-------------");
-		String mail ="abc.xyz@bl.co.in";
-		boolean isEMail = checkEMail(mail);
-		if(isEMail)
-			System.out.println(mail+"\s is an vaild Email");
+		System.out.println("---------UserRegistration PhoneNumber Verification-------------");
+		String number ="91   9043824796";
+		boolean isNumber = checkPhoneNumber(number);
+		if(isNumber)
+			System.out.println(number+"\s is an vaild PhoneNumber");
 		else
-			System.out.println(mail+"\s is an Invaild LastName");
+			System.out.println(number+"\s is an Invaild PhoneNumber");
 		
 
 	}

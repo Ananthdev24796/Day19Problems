@@ -19,8 +19,8 @@ public class UserRegistration {
 	 */
 	
 	
-		public static boolean checkFirstName(String lName) {
-			String  userRegistrationRegEx = "[A-Z]{1}[a-z]{2,6}";
+		public static boolean checkLastName(String lName) {
+			String  userRegistrationRegEx = "[A-Z]{1}[a-z]{2,}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(lName == null) {
 				return false;
@@ -36,7 +36,7 @@ public class UserRegistration {
 		System.out.println("---------UserRegistration-------------");
 		
 		String lName ="Nair";
-		boolean islName = checkFirstName(lName);
+		boolean islName = checkLastName(lName);
 		if(islName)
 			System.out.println(lName+"is an vaild LastName");
 		else

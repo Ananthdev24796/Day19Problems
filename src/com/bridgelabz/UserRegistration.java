@@ -20,7 +20,7 @@ public class UserRegistration {
 	
 	
 		public static boolean checkPhoneNumber(String number) {
-			String  userRegistrationRegEx = "[91]*[\s]*[0-9]{10}";
+			String  userRegistrationRegEx = "[91]* [0-9]{10}";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(number == null) {
 				return false;
@@ -34,7 +34,7 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		System.out.println("---------UserRegistration PhoneNumber Verification-------------");
-		String number ="91   9043824796";
+		String number ="91 9043824796";
 		boolean isNumber = checkPhoneNumber(number);
 		if(isNumber)
 			System.out.println(number+"\s is an vaild PhoneNumber");

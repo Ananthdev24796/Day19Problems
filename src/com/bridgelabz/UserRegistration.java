@@ -20,7 +20,7 @@ public class UserRegistration {
 	
 	
 		public static boolean checkEMail(String mail) {
-			String  userRegistrationRegEx = "[abc]*[.][a-z A-z]{3}[@][bl]*[.][co]*[.][a-z]{2}";
+			String  userRegistrationRegEx = "^[a-z]{1,}(.[a-z]{1,})+[@][bl]+.co(.in)";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(mail == null) {
 				return false;

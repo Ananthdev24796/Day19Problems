@@ -13,13 +13,13 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
 	/**
-	 * UC8
-	 *RShould clear all email samples provided separately
+	 * UC9
+	 *Should clear all email samples provided separately
     **/
 	
 	
 		public static boolean checkEMail(String mail) {
-			String  userRegistrationRegEx = "(?=.*[@#$&])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}";
+			String  userRegistrationRegEx = "^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+(.[a-z]{2,})+(.[a-z]{2,})";
 			Pattern patternObj = Pattern.compile(userRegistrationRegEx);
 			if(mail == null) {
 				return false;
@@ -32,8 +32,8 @@ public class UserRegistration {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("---------User Registration Password Verification-------------");
-		String mail ="";
+		System.out.println("---------User Registration Email Verification-------------");
+		String mail ="abc.1xy@asd.co.au";
 		boolean isMail = checkEMail(mail);
 		if(isMail)
 			System.out.println(mail+"\s is an vaild Email");
